@@ -1,6 +1,6 @@
 import './Card.css';
 
-function Card(props) {
+const Card = (props) => {
   // don't forget to put the whitespace to separate de class names (it is a long string)
   const classes = 'card ' + props.className;
 

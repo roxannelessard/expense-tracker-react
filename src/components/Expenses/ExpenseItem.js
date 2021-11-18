@@ -2,7 +2,7 @@ import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
 
   return (
     // you can't use your custom components as wrappers around other kind of content

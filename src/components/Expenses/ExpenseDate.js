@@ -1,6 +1,6 @@
 import "./ExpenseDate.css";
 
-function ExpenseDate(props) {
+const ExpenseDate = (props) => {
   // Add .toISOString() because it is a date object
   const month = props.date.toLocaleString("en-us", { month: "long" });
   const year = props.date.getFullYear();
