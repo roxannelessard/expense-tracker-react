@@ -9,17 +9,18 @@ const ExpenseItem = (props) => {
   // it returns a function which we can then call to assign a new value
   // (we'll be assigning new values by calling a function) for that UseState returns an array [currentStateValue, updatingFunction]
   // so we use array destructuring to store the elements
+  // state is separated on a per component basis
   const [title, setTitle] = useState(props.title);
 
   const clickHandler = () => {
     // by calling setTitle() the component return by the function will be executed again!
-    setTitle('Updated');
+    setTitle("Updated");
     console.log(title);
-  }
+  };
   return (
     // you can't use your custom components as wrappers around other kind of content
     <Card className="expense-item">
-      <ExpenseDate date={props.date}/>
+      <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{title}</h2>
       </div>
