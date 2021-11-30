@@ -21,6 +21,8 @@ const Expenses = (props) => {
         />
         {props.items.map((expense) => (
           <ExpenseItem
+            // for performance purpose : this key help react to find the individual item that changed (if not react would update all content not just s specific thing)
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
