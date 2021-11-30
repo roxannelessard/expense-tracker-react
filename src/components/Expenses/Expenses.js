@@ -12,6 +12,10 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
   };
 
+  const filteredExpenses = props.items.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div>
       <Card className="expenses">
@@ -19,15 +23,17 @@ const Expenses = (props) => {
           onChangeFilter={filterChangeHandler}
           selected={filteredYear}
         />
-        {props.items.map((expense) => (
-          <ExpenseItem
-            // for performance purpose : this key help react to find the individual item that changed (if not react would update all content not just s specific thing)
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
+        {filteredExpenses.length === 0 && <p>No expenses found</p>}
+        {filteredExpenses.length > 0 &&
+          filteredExpenses.map((expense) => (
+            <ExpenseItem
+              // for performance purpose : this key help react to find the individual item that changed (if not react would update all content not just s specific thing)
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          ))}
       </Card>
     </div>
   );
