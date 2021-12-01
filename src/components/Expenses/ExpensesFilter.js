@@ -3,8 +3,8 @@ import React from 'react';
 import './ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
-  const dropdownChangeHandler = (event) => {
-    console.log(event.target.value)
+  const dropdownChangeHandler = (e) => {
+    props.onChangeFilter(e.target.value);
   };
 
   return (
