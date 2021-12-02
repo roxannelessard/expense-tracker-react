@@ -18,7 +18,7 @@ import React, { useState } from "react";
     },
     {
       id: "e4",
-      title: "New Desk (Wooden)",
+      title: "Wooden Desk",
       amount: 450,
       date: new Date(2021, 5, 12),
     },
